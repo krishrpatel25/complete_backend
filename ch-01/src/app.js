@@ -1,7 +1,8 @@
 //server ne create karva
-const express = require("express");
+// const express = require("express");
+import express from "express";
 
-const app = express();
+export const app = express();
 app.use(express.json());
 
 const notes = [];
@@ -39,7 +40,3 @@ app.patch("/notes/:index", (req, res) => {
   notes[index].description = description;
   res.status(200).json({ message: "Note updated" });
 });
-
-module.exports = app;
-
-
